@@ -28,7 +28,7 @@ function App() {
       if (getLocation !== null) {
         getLocation.map((location) => {
           Axios
-            .get(`http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`)
+            .get(`http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API_key}`)
             .then(response => {
               setWeatherData((prevWeathers) => {
                 const updateWeather = [...prevWeathers];
