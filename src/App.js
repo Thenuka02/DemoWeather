@@ -50,7 +50,7 @@ function App() {
 
     try {
       const response = await Axios.get(
-        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}&aqi=no`,
+        `http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`,
       )
       setLocations((prevLoc) => {
         const updateLocations = [...prevLoc];
