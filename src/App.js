@@ -5,15 +5,15 @@ import AvailableCountry from './components/AvailableCountry';
 import Axios from 'axios';
 
 const dumyLocations =[
-  {countryName: 'Sri Lanka'},
+  {countryName: 'london'},
   {countryName: 'United Kingdom'},
   {countryName: 'United States' },
   {countryName: 'Australia'  },
 ];
 
 function App() {
-  const API_Key = '2b6d12abac88542310b460e70fed6f48';
-  //const URL = `http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`
+  const APIKey = '27c153ee5d148f36ddd2c549810e9dc5';
+  //const URL = `http://api.openweathermap.org/data/2.5/weather?q=${city name}&appid=${APIkey}`;
   const [locations, setLocations] = useState([]);
   const [weatherData, setWeatherData] = useState([]);
   const [temp, setTemp] = useState(dumyLocations);
@@ -24,12 +24,16 @@ function App() {
     getLocations();
     getIsEdited();
     setTimeout(() => {
-      const getLocation = JSON.parse(localStorage.getItem('locations'));
+      // const getLocation = JSON.parse(localStorage.getItem('locations'));
+      const getLocation = [1];
       if (getLocation !== null) {
-        getLocation.map((location) => {
+        getLocation.map((city)  => {
+          console.log(city)
           Axios
-            .get(`http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API_key}`)
+      
+            .get(`http://api.openweathermap.org/data/2.5/weather?q=${dumyLocations[0].countryName}&appid=${APIKey}`)
             .then(response => {
+              console.log(response)
               setWeatherData((prevWeathers) => {
                 const updateWeather = [...prevWeathers];
                 updateWeather.push(response.data);
@@ -46,7 +50,7 @@ function App() {
     saveIsEdited();
   }, [locations, isEdited])
 
-  const fetchData = async (location) => {
+  const fetchData = async (cityname) => {
 
     try {
       const response = await Axios.get(
@@ -120,7 +124,7 @@ function App() {
       fetchData={fetchData} />
       {isError && <p className="error">Wrong Location!! Please Enter correct Location</p>}
       {locations.length === 0 ? 
-      <h3>No Data...</h3>
+      <h3>Empty Data</h3>
       : <AvailableCountry weatherData={weatherData} onDelete={deleteHandler} />}
     </div>
   );
