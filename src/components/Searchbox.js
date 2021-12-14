@@ -19,24 +19,28 @@ const Searchbox = ({ fetchData }) => {
 
 
 return(
-    <div className="main">     
+    <div className="main">
+    <div  className="select"> 
      <form onSubmit={addWeather}>
-      <div className="searchInputs">
-        <input
-            value={location}
-            type="text"
-            id="header-search"
-            placeholder="Enter country name"
-            onChange={locationHandler} 
-        />
+            <select name="weather" id="weather" onChange={locationHandler} >
+             <option value="sriLanka">SriLanka</option>
+             <option value="london">London</option>
+             <option value="unitedStates">UnitedStates</option>
+             <option value="australia">Australia</option>
+             <option value="canada">Canada</option>
+             <option value="france">France</option>
+             <option value="germany">Germany</option>
+             <option value="india">India</option>
+             <option value="japan">Japan</option>
+             <option value="malaysia">Malaysia</option>
+            </select>
         <div>
-        <button className= "searchButton">
-        Search</button>
-        </div>
-        </div>
+        <button className="addButton">
+        Add</button>
+        </div>   
     </form>
     </div>
+    </div>
 )
-
 };
 export default Searchbox;

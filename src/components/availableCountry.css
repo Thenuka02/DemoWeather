@@ -1,0 +1,34 @@
+.weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .weather-card {
+    background: rgb(90, 66, 66);
+    width: 400px;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(226, 213, 213);
+    font-weight: 400;
+  }
+  
+  .weather-temp {
+    font-size: 2.5rem;
+  }
+  
+  .weather-temp span {
+    font-size: 1.5rem;
+  }
+  
+  .weather-card:hover {
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+ 

@@ -1,12 +1,14 @@
 import React from "react";
 import Card from "./Card";
+import './availableCountry.css';
 
 const AvailableCountry = ({ weatherData, onDelete }) => {
 
     return (
-        <div>
+        <div className="weather mv">
             {weatherData.map((data) => {
-                return <Card key={data.location.name} uniqueId={data.location.name} weatherData={data} onDelete={onDelete} />
+                console.log(data);
+                return <Card key={data.name} uniqueId={data.name} weatherData={data} onDelete={onDelete} />
             })}
         </div>
     )

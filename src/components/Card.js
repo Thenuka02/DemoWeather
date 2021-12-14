@@ -1,36 +1,18 @@
 import React from "react";
 
-const Card = ({ weatherData, onDelete, uniqueId }) => {
-
-    // const weatherTemp = weatherData.current.temp_c;
-    // const weatherCountry = `${weatherData.location.name}, ${weatherData.location.country}`;
-    // const weatherClimate = weatherData.current.condition.text;
-    // const weatherClimateIcon = weatherData.current.condition.icon;
-    // const dateTime = weatherData.location.localtime;
-
-    
-    const weatherTemp = weatherData.main.temp;
-    const weatherCountry = `${weatherData.city.name}, ${weatherData.city.country}`;
-    const weatherCondition = weatherData.weather.description;
-    const weatherClimateIcon = weatherData.weather.icon;
-    
-
-    const getLocation = () => {
-        onDelete(uniqueId);
-    }
-
+const Card = ({ weatherData}) => {
+    const temperature = weatherData.main.temp-273.15;
+    const country = weatherData.name;
+    const weatherCondition = weatherData.weather[0].description;
+    const icon = weatherData.weather[0].icon;
+     
     return (
-        <div>
-            
-            <h2>{weatherCountry}</h2>
-            <h2 className>{weatherTemp}<span> °C</span></h2>
+        <div className="weather-card">
+            <h2>{country}</h2>
+            <h2 className="weather-temp" >{Math.round(temperature * 100) / 100}<span id="kelvinToFarenheit"> °C</span></h2>
             <h2>{weatherCondition}</h2>
-            <img src={weatherClimateIcon} />
-           
-            <button onClick={getLocation}>Delete</button>
+            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="weather icon" />
         </div>
     )
 }
-
-
 export default Card;

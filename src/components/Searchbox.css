@@ -1,44 +1,29 @@
 
-  .searchInputs {
-      margin-top: 0px;
-      display: flex;
-      justify-content: center;
-      
-      
-    }
-    
-    .searchinput {
-      background-color: rgb(20, 35, 119);
-      border: 0;
-      border-radius: 2px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      font-size: 18px;
-      padding: 15px;
-      height: 30px;
-      width: 300px;
-      margin-top: 105px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+select {
+    background-color: #fff;
+    margin: 1rem auto;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.addButton {
+  width: 100%;
+  background-color: #869287;
+  color: white;
+  padding: 1rem;
+  margin:1rem auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  width: 400px;
+  display: flex;
+}
+
+/* .main{
+  background-image: url("../images/weatherbg.png")
   
-    .searchButton {
-      height: 30px;
-      width: 100px;
-      background-color:rgb(80, 92, 139);
-      display: grid;
-      place-items: center;
-      
-    }
-    .main{
-        background-image: url('/src/images/weatherbg.png');
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-        opacity: 1;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        
-    }
+} */
